@@ -1,10 +1,14 @@
-import { View, Text, Image } from 'react-native'
+import { View, Text, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { Colors } from '../../constants/Colors'
+import { useRouter } from 'expo-router'
 
 export default function PopularBusinessCard({business}) {
+  const router=useRouter();
   return (
-    <View style={{
+    <TouchableOpacity 
+    onPress={()=>router.push("/businessdetail/"+business?.id)}
+    style={{
         marginLeft:15,
         marginRight:10,
         padding:5,
@@ -41,17 +45,17 @@ export default function PopularBusinessCard({business}) {
             alignItems:'center',
             gap:5
         }}>
-            <Image source={require('./../../assets/images/money.png')}
+            {/* <Image source={require('./../../assets/images/money.png')}
             style={{
                 width:20,
                 height:20
             }}
-            />
+            /> */}
             <Text style={{
             fontFamily:'outfit-medium',
             fontSize:18,
             marginTop:3
-        }}>{business.price}</Text>
+        }}>Ksh {business.price}</Text>
         </View>
         <Text style={{
             fontFamily:'outfit-medium',
@@ -63,6 +67,6 @@ export default function PopularBusinessCard({business}) {
         }}>{business.category}</Text>
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
   )
 }

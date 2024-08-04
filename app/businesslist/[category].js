@@ -14,7 +14,10 @@ export default function BusinessListByCategory() {
     useEffect(()=>{
         navigation.setOptions({
           headerShown:true,
-          headerTitle:category
+          headerTitle:category,
+          headerStyle:{
+            backgroundColor:Colors.PRIMARY
+          }
         });
         getBusinessList()
     },[]);

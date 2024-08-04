@@ -1,4 +1,4 @@
-import { View, Text, FlatList, Image, TouchableOpacity } from 'react-native'
+import { View, Text, FlatList, Image, TouchableOpacity, Share } from 'react-native'
 import React from 'react'
 import {Colors} from './../../constants/Colors'
 import { useRouter } from 'expo-router'
@@ -15,13 +15,13 @@ export default function MenuList() {
         id:2,
         name:'My Products',
         icon:require('./../../assets/images/myBusiness.png'),
-        path:''
+        path:'/product/myProduct'
      },
      {
         id:3,
         name:'Share App',
         icon:require('./../../assets/images/share.png'),
-        path:''
+        path:'share'
      },
      {
         id:4,
@@ -37,6 +37,11 @@ const onMenuClick=(item)=>{
          signOut();
          return ;
       }
+      if (item.path=='share')
+         {
+            Share.share({message:'Download link will be updated here when available!'})
+         return;
+         }
    router.push(item.path)
 }
 

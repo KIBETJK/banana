@@ -5,9 +5,12 @@ import Slider from '../../components/Home/Slider'
 import Category from '../../components/Home/Category'
 import PopularBusiness from '../../components/Home/PopularBusiness'
 
-export default function home() {
+export default function Home() {
   return (
-    <ScrollView>
+    <View>
+    <ScrollView style={{
+      marginTop:30
+    }}>
 {/* Header */}
 <Header/>
 {/* Slider */}
@@ -18,5 +21,7 @@ export default function home() {
 <PopularBusiness/>
 <View style={{height:50}}></View>
     </ScrollView>
+    </View>
   )
+  
 }
