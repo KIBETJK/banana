@@ -32,7 +32,7 @@ const onDelete=()=>{
 //    ToastAndroid.show('Product Deleted!',ToastAndroid.LONG)
 // }
 const deleteProduct = async () => {
-  console.log("Delete Business");
+  console.log("Delete Product");
   try {
     await deleteDoc(doc(db, 'BusinessList', business?.id));
     ToastAndroid.show('Product Deleted!', ToastAndroid.LONG);
